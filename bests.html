@@ -1,0 +1,151 @@
+﻿<?php
+session_start();
+include('db/db.php');
+
+$sual="noun";
+$oyuncu='';
+$dogru='';
+$cins='';
+$cinss='';
+$sira=0;
+
+if(isset($_POST['noun'])){
+	$sual="noun";
+}
+if(isset($_POST['verb'])){
+	$sual="verb";
+}
+if(isset($_POST['adjective'])){
+	$sual="adjective";
+}
+if(isset($_POST['adverb'])){
+	$sual="adverb";
+}
+if(isset($_POST['number'])){
+	$sual="number";
+}
+if(isset($_POST['pronoun'])){
+	$sual="pronoun";
+}
+?>
+<html>
+<head>
+<title>Nəticələr</title>
+<meta charset="UTF-8">
+  <meta name="author" content="Azer Mirzalee">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/menustil.css">
+  <link rel="stylesheet" href="style/levstil.css">
+  <script type="text/javascript" src="js/bests.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.2.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body bgcolor="orange">
+
+<table align="center" class="gameTable">
+
+<tr><td>
+<table class="mainStill" align="center">
+<tr>
+<td align="right"><img src="fotolar/aze.png" class="flagImg"></td>
+<td align="center">
+<a href="index.html" class="siteName">azeringilis</a>
+</td>
+<td align="left"><img src="fotolar/uk.png" class="flagImg"></td>
+</tr>
+</table>
+</td></tr>
+
+<tr><td align="center">
+<font class="basliqYazi">20 ən yaxşı oyunçu</font>
+</td></tr>
+
+<tr><td>
+<table>
+<tr>
+<td>
+<form method="post">
+<input type="hidden" name="noun">
+<input type="submit" id="isim" value="İsim oyunu" class="inputSec">
+</form>
+</td>
+<td>
+<form method="post">
+<input type="hidden" name="verb">
+<input type="submit" id="verb" value="Fel oyunu" class="inputSec">
+</form>
+</td>
+<td>
+<form method="post">
+<input type="hidden" name="adjective">
+<input type="submit" id="adjective" value="Sifət oyunu" class="inputSec">
+</form>
+</td>
+</tr>
+<tr>
+<td>
+<form method="post">
+<input type="hidden" name="adverb">
+<input type="submit" id="adverb" value="Zərflik oyunu" class="inputSec">
+</form>
+</td>
+<td>
+<form method="post">
+<input type="hidden" name="number">
+<input type="submit" id="number" value="Say oyunu" class="inputSec">
+</form>
+</td>
+<td>
+<form method="post">
+<input type="hidden" name="pronoun">
+<input type="submit" id="pronoun" value="Əvəzlik oyunu" class="inputSec">
+</form>
+</td>
+</tr>
+
+</table>
+</td></tr>
+
+<tr><td>
+<div class="result">
+<table align="center" class="cedvelTbMain">
+<tr class="cedvelTrMain">
+<td><font class="cedvelMainTxt">No</font></td>
+<td align="center"><font class="cedvelMainTxt">Ad</font></td>
+<td><font class="cedvelMainTxt">Doğru</font></td>
+<td><font class="cedvelMainTxt">Cins</font></td>
+</tr>
+<?php
+$getir=mysqli_query($dbcon,"SELECT * FROM users ORDER BY $sual DESC,id LIMIT 20");
+	while($tap=mysqli_fetch_array($getir)){
+		$sira++;
+		$oyuncu=$tap['ad'];
+		$dogru=$tap[$sual];
+		$cins=$tap['cins'];
+		if($cins=="Kişi"){
+			$cinss="K";
+		}else{
+			$cinss="Q";
+		}
+?>
+<tr class="cedvelTrMain">
+<td align="center"><?php echo $sira;?></td>
+<td align="center"><?php echo $oyuncu;?></td>
+<td align="center"><?php echo $dogru;?></td>
+<td align="center"><?php echo $cinss;?></td>
+</tr>
+<?php
+}
+?>
+</table>
+</div>
+<div id="nounDiv">
+</div>
+</td></tr>
+
+</table>
+
+</body>
+</html>

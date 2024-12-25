@@ -1,0 +1,113 @@
+﻿<?php
+ob_start();
+include('db/db.php');
+
+$error='';
+$ad='';
+$parol='';
+
+if($_POST){
+	
+$ad=$_POST['ad'];
+$parol=$_POST['parol'];
+$cins=$_POST['gender'];
+
+	if(empty($ad) || empty($parol)){
+		$error='Boş xana var..';
+	}else if($cins=="Seç"){
+		$error='Cins seçilmədi..';
+	}else{
+		$query="INSERT INTO users (ad,parol,cins,noun,verb,adjective,adverb,number,pronoun) VALUES('".$ad."','".$parol."','".$cins."','0','0','0','0','0','0')";
+		$sql=mysqli_query($dbcon,$query);
+		if($sql){
+			session_start();
+			$_SESSION['login']=true;
+			$_SESSION['ad'] = $ad;
+			$_SESSION['parol'] = $parol;
+			$error='Gözləyin...';
+			header("Refresh: 1; url=play.php");
+			ob_end_flush();
+		}else{
+			$error='Yenidən yoxla...';
+		}
+	}
+}
+
+?>
+<html>
+<head>
+<title>Qeydiyyat</title>
+<meta charset="UTF-8">
+  <meta name="author" content="Azer Mirzalee">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/menustil.css">
+  <link rel="stylesheet" href="style/levstil.css">
+</head>
+<body bgcolor="orange">
+
+<table align="center" class="gameTable">
+
+<tr><td>
+<table class="mainStill" align="center">
+<tr>
+<td align="right"><img src="fotolar/aze.png" class="flagImg"></td>
+<td align="center">
+<a href="index.html" class="siteName">azeringilis</a>
+</td>
+<td align="left"><img src="fotolar/uk.png" class="flagImg"></td>
+</tr>
+</table>
+</td></tr>
+
+<tr><td align="center">
+<font class="basliqYazi">QEYDİYYAT</font>
+</td></tr>
+
+<tr><td>
+<form method="post" action="">
+<table align="center" width="100%">
+
+<tr><td align="center">
+Ad:<br>
+<input type="textbox" name="ad" class="formTxtBoxes">
+</td></tr>
+
+<tr><td align="center">
+Şifrə:<br>
+<input type="password" name="parol" class="formTxtBoxes">
+</td></tr>
+
+<tr><td align="center">
+Cins:<br>
+<select name="gender" style="width:30%;text-align:center;">
+<option selected>Seç</option>
+<option>Kişi</option>
+<option>Qadın</option>
+</select>
+</td></tr>
+
+<tr><td align="center">
+<input type="submit" value="Təsdiq" class="reglogBtn">
+</td></tr>
+</table>
+</form>
+</td></tr>
+
+<tr><td align="center">
+<?php echo $error; ?>
+</td></tr>
+
+<tr><td>
+<table class="authorInfoTd" align="center">
+<tr>
+<td align="center">
+Created by <a href="https://www.instagram.com/91.azer/" class="authorName">Azar Mirzayev</a>
+</td>
+</tr>
+</table>
+</td></tr>
+
+</table>
+
+</body>
+</html>

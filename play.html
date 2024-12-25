@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<!DOCTYPE html>
+<?php
+ob_start();
+session_start();
+include('db/db.php');
+
+if(!isset($_SESSION['ad'])){
+	echo 'Zəhmət olmasa hesaba daxil olun...';
+	header("Refresh:1; url=login.php");
+}else{
+?>
+
+<html>
+<head>
+<title>Oyna</title>
+<meta charset="UTF-8">
+  <meta name="author" content="Azer Mirzalee">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/menustil.css">
+  <link rel="stylesheet" href="style/levstil.css">
+</head>
+
+<body bgcolor="orange">
+
+<table align="center" class="gameTable">
+
+<tr><td>
+<table class="mainStill" align="center">
+<tr>
+<td align="right"><img src="fotolar/aze.png" class="flagImg"></td>
+<td align="center">
+<a href="index.html" class="siteName">azeringilis</a>
+</td>
+<td align="left"><img src="fotolar/uk.png" class="flagImg"></td>
+</tr>
+</table>
+</td></tr>
+
+<tr><td align="center" class="tdPlay">
+Oyun Seç
+</td></tr>
+
+<tr><td align="center" class="tdPlay">
+<a href="levels/nouns.php" class="plyBtn">İSİM - 1372 söz</a>
+</td></tr>
+
+<tr><td align="center" class="tdPlay">
+<a href="levels/verbs.php" class="plyBtn">FEL - 452 söz</a>
+</td></tr>
+
+<tr><td align="center" class="tdPlay">
+<a href="levels/adjectives.php" class="plyBtn">SİFƏT - 400 söz</a>
+</td></tr>
+
+<tr><td align="center" class="tdPlay">
+<a href="levels/numbers.php" class="plyBtn">SAY</a>
+</td></tr>
+
+<tr><td align="center" class="tdPlay">
+<a href="levels/adverbs.php" class="plyBtn">ZƏRF</a>
+</td></tr>
+
+<tr><td align="center" class="tdPlay">
+<a href="levels/pronouns.php" class="plyBtn">ƏVƏZLİK</a>
+</td></tr>
+
+<tr><td>
+<table class="authorInfoTd" align="center">
+<tr>
+<td align="center">
+Created by <a href="https://www.instagram.com/91.azer/" class="authorName">Azar Mirzayev</a>
+</td>
+</tr>
+</table>
+</td></tr>
+
+</table>
+
+</body>
+
+<?php 
+}
+ob_end_flush();
+?>
+</html>
