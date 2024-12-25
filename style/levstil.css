@@ -1,0 +1,125 @@
+﻿.disclaimer{
+	display:none;
+}
+.mainStill{
+	background-image: linear-gradient(darkgreen,green,white);
+	border-radius:20px;
+	padding: 2px 20px 2px 20px;
+	border:3px solid black;
+}
+.siteName{
+	color:white;
+	font-weight:bold;
+	font-style:italic;
+	font-size:30px;
+	text-decoration:none;
+}
+.flagImg{
+	border-radius:50%;
+	width:60px;
+	height:30px;
+}
+.tbUpper{
+	display:none;
+}
+.startBtn{
+	background-image: linear-gradient(darkblue,blue,darkblue);
+	color:white;
+	font-weight:bold;
+	font-size:40px;
+	border-radius:30px;
+	padding: 40px 20px 40px 20px;
+	border: 5px solid black;
+}
+.sualStil{
+	display:none;
+	font-size:38px;
+	font-weight:bold;
+	color:darkblue;
+}
+.cvbStil{
+	display:none;
+	background-color:white;
+	color:black;
+	border-radius:10px;
+	padding: 3px 0 3px 0;
+	font-size:18px;
+	width:100%;
+	border: 3px solid black;
+}
+.zamanStil{
+	display:none;
+	font-size:32px;
+	font-style:bold;
+	width:40px;
+	height:40px;
+	border-radius:50%;
+	background-color:white;
+	border:5px solid black;
+	float:left;
+	position:relative;
+	left:42%;
+}
+.cvbStil:hover{
+	background-color:yellow;
+}
+.errCavab{
+	font-size:25px;
+}
+.nextstil{
+	background-color:darkblue;
+	color:white;
+	border: 3px solid black;
+	border-radius:20px;
+	font-style:bold;
+	padding: 8px 20px 8px 20px;
+	display:none;
+	font-size:20px;
+}
+.stopstil{
+	background-color:darkred;
+	color:white;
+	border: 3px solid black;
+	border-radius:20px;
+	font-style:bold;
+	padding: 8px 20px 8px 20px;
+	display:none;
+	font-size:20px;
+}
+.authorInfoTd{
+	background-image: linear-gradient(white,green,darkgreen);
+	border-radius:20px;
+	padding: 2px 20px 2px 20px;
+	border: 3px solid black;
+}
+.authorName{
+	text-decoration:none;
+	font-weight:bold;
+	color:white;
+	font-style:italic;
+}
+.playerStil{
+	font-weight:bold;
+	font-size:30px;
+}
+.cinsStil{
+	border:2px solid black;
+	border-radius:50%;
+	width:30px;
+	height:30px;
+	float:left;
+}
+.tdPlay{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.userTd{
+	display: flex;
+	align-items: right;
+	justify-content: right;
+}
+.tdSual{
+	width:296px;
+	text-align: center;
+}

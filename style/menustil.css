@@ -1,0 +1,75 @@
+.menuBtn{
+	text-decoration:none;
+	background-image: linear-gradient(darkgreen,darkgreen,green,green,darkgreen,darkgreen);
+	color:white;
+	font-weight:bold;
+	font-size:25px;
+	border-radius:30px;
+	padding: 15px 40px 15px 40px;
+	border: 4px solid black;
+}
+.plyBtn{
+	text-decoration:none;
+	background-image: linear-gradient(darkgreen,darkgreen,green,green,darkgreen,darkgreen);
+	color:white;
+	font-weight:bold;
+	font-size:15px;
+	border-radius:20px;
+	padding: 5px 20px 5px 20px;
+	border: 3px solid black;
+}
+.reglogBtn{
+	text-decoration:none;
+	background-image: linear-gradient(darblue,darkblue,blue,blue,darkblue,darkblue);
+	color:white;
+	font-weight:bold;
+	font-size:20px;
+	border-radius:30px;
+	padding: 10px 30px 10px 30px;
+	border: 4px solid black;
+}
+.basliqYazi{
+	font-weight:bold;
+	font-size:30px;
+}
+.cedvelTbMain{
+	border:4px solid white;
+	border-radius:5px;
+}
+.cedvelTrMain{
+	background-color:white;
+	color:black;
+	font-weight:bold;
+}
+.cedvelMainTxt{
+	font-weight:bold;
+	color:darkgreen;
+	font-style:italic;
+}
+.formTxtBoxes{
+	border:3px solid black;
+	border-radius:10px;
+	text-align:center;
+	padding: 4px 5px 4px 5px;
+}
+.reglogBtn{
+	color:white;
+	background-color:darkblue;
+	border:2px solid white;
+	border-radius:10px;
+	padding: 5px 20px 5px 20px;
+	font-weight:bold;
+	font-size:15px;
+}
+.inputSec{
+	color:white;
+	background-color:black;
+	border:4px solid white;
+	border-radius:10px;
+	padding:3px 6px 3px 6px;
+}
+.result{
+	overflow:auto;
+	height:250px;
+	border:2px solid black;
+}
